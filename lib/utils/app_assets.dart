@@ -1,0 +1,14 @@
+class AppAssets {
+  static const String quranIcon = "assests/icons/quran.png" ;
+  static const String hadithIcon = "assests/icons/book.png" ;
+  static const String sebhaIcon = "assests/icons/sebha.png" ;
+  static const String timeIcon = "assests/icons/time.png" ;
+  static const String radioIcon = "assests/icons/radio.png" ;
+
+  static const String hadithBg = "assests/images/vertical-shot-hassan-ii-mosque-casablanca-morocco.png" ;
+  static const String sebhaBg = "assests/images/close-up-islamic-new-year-with-quran-books.png" ;
+  static const String quranBg = "assests/images/taj-mahal-agra-india.png" ;
+  static const String radioBg = "assests/images/radioBg.png" ;
+  static const String timeBg = "assests/images/Background.png" ;
+ 
+}
