@@ -10,5 +10,10 @@ class AppAssets {
   static const String quranBg = "assests/images/taj-mahal-agra-india.png" ;
   static const String radioBg = "assests/images/radioBg.png" ;
   static const String timeBg = "assests/images/Background.png" ;
+
+  static const String islaminBg = "assests/icons/islami_icon.png" ;
+  static const String quranSearchIcon = "assests/icons/quaranIconSearch.png" ;
+  static const String recentlyimg = "assests/images/recentlyImage.png" ;
+
  
 }

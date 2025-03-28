@@ -53,7 +53,12 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(icon: naviItem(index: 4, path: AppAssets.timeIcon) , label: "time"),
             
             ]),
-           body: bodyTabs[selectedIndex] ,
+           body: Column(
+             children: [
+                Image(image: AssetImage(AppAssets.islaminBg)) ,
+               bodyTabs[selectedIndex],
+             ],
+           ) ,
             
         )
       ],
