@@ -4,13 +4,23 @@ import 'package:islami_app/tabs/quran/Auran_Suras.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
 
-class Sura extends StatelessWidget {
+class Sura extends StatefulWidget {
    static String routname = "sura_page";
+   
 
   @override
+  State<Sura> createState() => _SuraState();
+}
+
+class _SuraState extends State<Sura> {
+  // List<String> suraLines = [] ;
+  String suraContent = "" ;
+  
+  @override
   Widget build(BuildContext context) {
-    // var index = ModalRoute.of(context)?.settings.arguments as int  ;
-    var index = 1 ;
+    var index = ModalRoute.of(context)?.settings.arguments as int  ;
+    // var index = 1 ;
+    suraFile(index) ;
     return Scaffold(
       backgroundColor: AppColors.lightBlack,
         appBar: AppBar(
@@ -29,8 +39,9 @@ class Sura extends StatelessWidget {
               Text(arabicAuranSuras[index] , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold , color: AppColors.mainColor , ), ),
               SizedBox(height: 50,) ,
               
-              Text("arabicAuranSuras[index]" , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold , color: AppColors.mainColor , ), ),
-
+              Expanded(child:SingleChildScrollView( child: Text(suraContent , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold , color: AppColors.mainColor ,  ),textDirection: TextDirection.rtl,  textAlign:TextAlign.center ,),)
+)
+               
              ],
            ),
           ],
@@ -40,5 +51,18 @@ class Sura extends StatelessWidget {
 
   void suraFile(int index ) async{
    String fileContent = await rootBundle.loadString("assests/files/Suras/${index+1}.txt") ;
+   List<String> suraLines = fileContent.split('\n');
+   for(int i=0 ; i< suraLines.length ; i++){
+    suraLines[i] += "[${i+1}]" ;
+
+   }
+ suraContent = suraLines.join(" ") ;
+   Future.delayed(const Duration( seconds: 1) , (){
+    setState(() {
+      
+    });
+   }
+   ) ;
+    
   }
 }
