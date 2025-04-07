@@ -15,5 +15,11 @@ class AppAssets {
   static const String quranSearchIcon = "assests/icons/quaranIconSearch.png" ;
   static const String recentlyimg = "assests/images/recentlyImage.png" ;
 
+  static const String starIcon = "assests/images/star.png" ;
+
+  static const String suraBG = "assests/images/suraBG.png" ;
+
+
+
  
 }

@@ -8,13 +8,14 @@ import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
 
 class HomeScreen extends StatefulWidget{
+  static String routname = "home";
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0 ;
-
+  
   @override
   Widget build(BuildContext context) {
     List<Widget> bodyTabs = [
