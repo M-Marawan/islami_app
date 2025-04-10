@@ -5,7 +5,7 @@ import 'package:islami_app/utils/app_colors.dart';
 
 class SuraListWidget extends StatelessWidget {
   int index ;
-   SuraListWidget(this.index) ;
+   SuraListWidget(this.index, {super.key}) ;
       
   @override
   Widget build(BuildContext context) {

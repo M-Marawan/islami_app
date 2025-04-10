@@ -20,7 +20,10 @@ class _SuraState extends State<Sura> {
   Widget build(BuildContext context) {
     var index = ModalRoute.of(context)?.settings.arguments as int  ;
     // var index = 1 ;
-    suraFile(index) ;
+    
+    if(suraContent.isEmpty){
+      suraFile(index) ;
+    }
     return Scaffold(
       backgroundColor: AppColors.lightBlack,
         appBar: AppBar(
@@ -39,7 +42,25 @@ class _SuraState extends State<Sura> {
               Text(arabicAuranSuras[index] , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold , color: AppColors.mainColor , ), ),
               SizedBox(height: 50,) ,
               
-              Expanded(child:SingleChildScrollView( child: Text(suraContent , style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold , color: AppColors.mainColor ,  ),textDirection: TextDirection.rtl,  textAlign:TextAlign.center ,),)
+              Expanded(child: suraContent.isEmpty ? Center(
+                child: CircularProgressIndicator(
+                  color:AppColors.mainColor ,
+                ),
+              ) :
+               SizedBox(
+                  height: 200,
+                   child: SingleChildScrollView(
+                     child: Text(
+                      suraContent , 
+                     style: TextStyle(
+                      fontSize: 20 ,
+                       fontWeight: FontWeight.bold , 
+                       color: AppColors.mainColor ,  ),
+                       textDirection: TextDirection.rtl,  
+                       textAlign:TextAlign.center ,),
+                       ),
+                 
+               )
 )
                
              ],
@@ -54,15 +75,14 @@ class _SuraState extends State<Sura> {
    List<String> suraLines = fileContent.split('\n');
    for(int i=0 ; i< suraLines.length ; i++){
     suraLines[i] += "[${i+1}]" ;
+    print(suraLines[i]) ;
 
    }
- suraContent = suraLines.join(" ") ;
-   Future.delayed(const Duration( seconds: 1) , (){
-    setState(() {
-      
-    });
-   }
-   ) ;
+ suraContent = suraLines.join() ;
+ suraContent = suraContent.replaceAll(RegExp(r'[\r\n]+'), '');
+   await Future.delayed(const Duration( seconds: 1) ) ;
+    setState(() {}) ;
+   
     
   }
 }
