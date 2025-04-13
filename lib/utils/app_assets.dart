@@ -18,6 +18,7 @@ class AppAssets {
   static const String starIcon = "assests/images/star.png" ;
 
   static const String suraBG = "assests/images/suraBG.png" ;
+  static const String hadithBG = "assests/images/hadeethBG.png" ;
 
 
 
