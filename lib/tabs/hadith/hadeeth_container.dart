@@ -45,7 +45,7 @@ class _hadeethContainerState extends State<hadeethContainer> {
                   title ?? '',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 33),
                 
                 Expanded(
                   child: SingleChildScrollView(child: Text(

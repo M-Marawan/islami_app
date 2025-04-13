@@ -20,6 +20,9 @@ class AppAssets {
   static const String suraBG = "assests/images/suraBG.png" ;
   static const String hadithBG = "assests/images/hadeethBG.png" ;
 
+  static const String sebha = "assests/images/SebhaBody 1.png" ;
+
+
 
 
  

@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
            body: Column(
              children: [
                 Image(image: AssetImage(AppAssets.islaminBg)) ,
-               bodyTabs[selectedIndex],
+               Expanded( child: bodyTabs[selectedIndex],),
              ],
            ) ,
             
