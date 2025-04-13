@@ -25,6 +25,13 @@ class AppAssets {
   static const String mosque = "assests/images/Mosque-02.png" ;
   static const String sound = "assests/images/soundWave 1.png" ;
 
+  static const String ONB1 = "assests/images/ONB1.png" ;
+  static const String ONB2 = "assests/images/kabba.png" ;
+  static const String ONB3 = "assests/images/reading.png" ;
+  static const String ONB4 = "assests/images/bearish.png" ;
+  static const String ONB5 = "assests/images/radioONB.png" ;
+
+
 
 
 

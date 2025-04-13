@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app/home_screen.dart';
+import 'package:islami_app/on_boarding.dart';
 
  
 
@@ -17,7 +18,7 @@ class SplashScreenState  extends State<SplashScreen>{
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, HomeScreen.routname) ;
+      Navigator.pushReplacementNamed(context, OnBoardingPage.routname) ;
     });
   }
 

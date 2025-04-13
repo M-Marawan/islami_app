@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home_screen.dart';
+import 'package:islami_app/on_boarding.dart';
 import 'package:islami_app/tabs/quran/provider.dart';
 import 'package:islami_app/tabs/quran/sura.dart';
 import 'package:islami_app/tabs/splash_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashScreenState.routname,  
       routes: {
         SplashScreenState.routname: (context) => SplashScreen(), 
+        OnBoardingPage.routname : (context) => OnBoardingPage() ,
         HomeScreen.routname: (context) => HomeScreen(),  
         Sura.routname : (context) => Sura() ,
          
