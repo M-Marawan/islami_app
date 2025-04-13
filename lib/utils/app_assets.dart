@@ -22,6 +22,9 @@ class AppAssets {
 
   static const String sebha = "assests/images/SebhaBody 1.png" ;
 
+  static const String mosque = "assests/images/Mosque-02.png" ;
+  static const String sound = "assests/images/soundWave 1.png" ;
+
 
 
 
