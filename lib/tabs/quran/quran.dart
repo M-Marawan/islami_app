@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/tabs/quran/Auran_Suras.dart';
 import 'package:islami_app/tabs/quran/Sura_list_widget.dart';
+import 'package:islami_app/tabs/quran/provider.dart';
 import 'package:islami_app/tabs/quran/recentlyWidget.dart';
 import 'package:islami_app/tabs/quran/shared_prefrence.dart';
 import 'package:islami_app/tabs/quran/sura.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class Quran extends StatefulWidget{
+  
 
   @override
   State<Quran> createState() => _QuranState();
@@ -15,9 +18,11 @@ class Quran extends StatefulWidget{
 
 class _QuranState extends State<Quran> {
   List<int> QuranIndices = List.generate(114, (index) => index ,) ;
+   late MostRecentProvider provider ;
   
   @override
   Widget build(BuildContext context) {
+     provider = Provider.of<MostRecentProvider>(context) ;
    return Container(
     margin: EdgeInsets.all(20),
     child: Column(
@@ -66,14 +71,19 @@ class _QuranState extends State<Quran> {
           ),
            SizedBox(height: 10,) 
        , SizedBox(
-            height: 370 ,  
+            height: provider.mostRecent.isEmpty ? 520 : 370 ,
+          
             child: ListView.separated(
               itemBuilder: (context, index) => InkWell(child: SuraListWidget(QuranIndices[index]), onTap: () {
                 Navigator.of(context).pushNamed(Sura.routname,arguments: QuranIndices[index] ) ;
-                updateMostRecentList(QuranIndices[index]) ;
+               provider.updateMostRecentList(QuranIndices[index]) ;
               },
               ) ,
-              separatorBuilder: (context, index) => SizedBox(height: 10,),
+              separatorBuilder: (context, index) => Container(
+                padding: EdgeInsets.all(4),
+                width: 1,  
+                height: 1,  
+                color: AppColors.white,) ,
               itemCount: QuranIndices.length,
           
             ), 
@@ -100,4 +110,6 @@ class _QuranState extends State<Quran> {
     });
     
   }
+
+
 }

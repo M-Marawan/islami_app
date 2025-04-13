@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/tabs/quran/Auran_Suras.dart';
+import 'package:islami_app/tabs/quran/provider.dart';
 import 'package:islami_app/utils/app_assets.dart';
 import 'package:islami_app/utils/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class Sura extends StatefulWidget {
    static String routname = "sura_page";
@@ -13,11 +15,13 @@ class Sura extends StatefulWidget {
 }
 
 class _SuraState extends State<Sura> {
+ late MostRecentProvider provider ;
   // List<String> suraLines = [] ;
   String suraContent = "" ;
   
   @override
   Widget build(BuildContext context) {
+      provider = Provider.of<MostRecentProvider>(context) ;
     var index = ModalRoute.of(context)?.settings.arguments as int  ;
     // var index = 1 ;
     
@@ -84,5 +88,12 @@ class _SuraState extends State<Sura> {
     setState(() {}) ;
    
     
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    provider.readMostRecentList() ;
   }
 }
